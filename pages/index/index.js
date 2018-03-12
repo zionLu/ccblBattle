@@ -11,169 +11,6 @@ Page({
         let self = this
         wx.removeStorageSync('classInfo')
         console.log('打开index页')
-        // wx.getUserInfo({
-        //     success: function (res) {
-        //         app.globalData.userInfo = res.userInfo
-        //         wx.setStorageSync('userInfo', res.userInfo)
-        //         name=res.userInfo.nickName
-        //         avatar = res.userInfo.avatarUrl
-        //         wx.login({
-        //             success: function (res) {
-        //                 if(!res.code){
-        //                     wx.showModal({
-        //                         title: '没拿到code,登录异常',
-        //                         content: '',
-        //                         showCancel: false
-        //                     })
-        //                 }else{
-        //                     console.log(res.code)
-        //                 }                     
-        //                 wx.request({
-        //                     url: 'https://www.runhigh-ccbl.com/api/commonLogin',
-        //                     data: {
-        //                         code: res.code,
-        //                     },
-        //                     method: 'POST',
-        //                     success: function (res) {
-        //                         console.log(res)
-        //                         if (!res.data.data.token){
-        //                             wx.showModal({
-        //                                 title: '没拿到token，请求异常',
-        //                                 content: '',
-        //                                 showCancel: false
-        //                             })
-        //                         }else{
-        //                             console.log(res.data.data.token)
-        //                         }
-        //                         let token=res.data.data.token
-        //                         let openid=res.data.data.openid
-        //                         wx.setStorageSync('token', token)
-        //                         wx.setStorageSync('openid', openid)
-        //                         if (res.data.data.classInfo){
-        //                             wx.setStorageSync('classInfo', res.data.data.classInfo)
-        //                         }
-        //                         //此处应储存openid和token
-        //                         wx.request({
-        //                             url: 'https://www.runhigh-ccbl.com/api/updateInfo',
-        //                             header: { 'Authorization': 'Bearer ' + token },
-        //                             data:{
-                                        
-        //                                 wechatName:name,
-        //                                 wechatAvatar:avatar,
-        //                             },
-        //                             method:'POST',
-        //                             success:function(res){
-
-        //                             },
-        //                             fail:function(){
-        //                                 wx.showModal({
-        //                                     title: '请求异常',
-        //                                     content: '',
-        //                                     showCancel:false
-        //                                 })
-        //                             }
-        //                         })                             
-
-        //                     },
-        //                     fail: function (res) {
-        //                         wx.showModal({
-        //                             title: '请求异常',
-        //                             content: '',
-        //                             showCancel: false
-        //                         })
-        //                     }
-        //                 })
-        //             }
-        //         })
-        //     },
-        //     fail: function (res) {
-        //         //作拒绝授权处理
-                
-        //         wx.showModal({
-        //             title: '请授权，可以在小程序设置界面中控制授权状态',
-        //             content: ' ',
-        //             showCancel: false,
-        //             success:function(){
-        //         wx.openSetting({
-        //             success:function(res){
-        //                 wx.getUserInfo({
-        //                     success: function (res) {
-
-        //                         console.log('授权成功')
-        //                         console.log(res)
-        //                         app.globalData.userInfo = res.userInfo
-        //                         wx.setStorageSync('userInfo', res.userInfo)
-        //                         name = res.userInfo.nickName
-        //                         avatar = res.userInfo.avatarUrl
-        //                         wx.login({
-        //                             success: function (res) {
-        //                                 console.log('登陆成功')
-        //                                 console.log(res)
-        //                                 wx.request({
-        //                                     url: 'https://www.runhigh-ccbl.com/api/commonLogin',
-        //                                     data: {
-        //                                         code: res.code,
-        //                                     },
-        //                                     method: 'POST',
-        //                                     success: function (res) {
-        //                                         console.log('取得openID和token')
-        //                                         console.log(res)
-        //                                         let token = res.data.data.token
-        //                                         //此处应储存openid和token
-        //                                         wx.setStorageSync('openid', res.data.data.openid)
-        //                                         wx.setStorageSync('token', res.data.data.token)
-        //                                         console.log(wx.getStorageSync('token'))
-        //                                         if(res.data.data.classInfo){
-        //                                             wx.setStorageSync('classInfo', res.data.data.classInfo)
-        //                                         }
-        //                                         wx.request({
-        //                                             url: 'https://www.runhigh-ccbl.com/api/updateInfo',
-        //                                             header: { 'Authorization': 'Bearer ' + token },
-        //                                             data: {
-
-        //                                                 wechatName: name,
-        //                                                 wechatAvatar: avatar,
-        //                                             },
-        //                                             method: 'POST',
-        //                                             success: function (res) {
-        //                                                 console.log('更新成功')
-        //                                                 console.log(res)
-        //                                             },
-        //                                             fail:function(){
-        //                                                 wx.showModal({
-        //                                                     title: '请求异常',
-        //                                                     content: '',
-        //                                                     showCancel: false
-        //                                                 })
-        //                                             }
-        //                                         })
-
-        //                                     },
-        //                                     fail: function (res) {
-        //                                         wx.showModal({
-        //                                             title: '请求异常',
-        //                                             content: '',
-        //                                             showCancel: false
-        //                                         })
-        //                                     }
-        //                                 })
-        //                             }
-        //                         })
-        //                     },
-        //                     fail:function(){
-        //                         wx.showModal({
-        //                             title: '请授权',
-        //                             content: '',
-        //                             showCancel: false
-        //                         })
-        //                     }
-        //                 })
-        //             }
-        //         })
-        //             }
-        //         })
-        //     },
-        // })
         wx.getUserInfo({
             success: function (res) {
                 app.globalData.userInfo = res.userInfo
@@ -183,27 +20,7 @@ Page({
                 self.loginOperation()
             },
             fail: function (res) {
-                wx.showModal({
-                    title: '请授权，可以在小程序设置界面中控制授权状态',
-                    content: ' ',
-                    showCancel: false,
-                    success: function () {
-                        wx.openSetting({
-                            success: function (res) {
-                                wx.getUserInfo({
-                                    success: self.loginOperation(),
-                                    fail: function () {
-                                        wx.showModal({
-                                            title: '请授权',
-                                            content: '',
-                                            showCancel: false
-                                        })
-                                    }
-                                })
-                            }
-                        })
-                    }
-                })
+                self.askToGetSetting()
             }
         })
     },
@@ -360,6 +177,46 @@ Page({
                         reject()
                     }
                 })
+            })
+        })
+    },
+    askToGetSetting:function() {
+        new Promise(function (resolve, reject) {
+            wx.showModal({
+                title: '请授权，可以在小程序设置界面中控制授权状态',
+                content: ' ',
+                showCancel: false,
+                success: function () {
+                    resolve()
+                },
+                fail: function () {
+                    reject()
+                }
+            })
+        }).then(function () {
+            return new Promise(function (resolve, reject) {
+                wx.openSetting({
+                    success: function () {
+                        resolve()
+                    }
+                })
+            })
+        }).then(function () {
+            wx.getUserInfo({
+                success: function () {
+                    app.globalData.userInfo = res.userInfo
+                    wx.setStorageSync('userInfo', res.userInfo)
+                    self.data.name = res.userInfo.nickName
+                    self.data.avatar = res.userInfo.avatarUrl
+                    self.loginOperation()
+                },
+                fail: function () {
+                    wx.showModal({
+                        title: '请授权',
+                        content: '',
+                        showCancel: false
+                    })
+                }
             })
         })
     }
