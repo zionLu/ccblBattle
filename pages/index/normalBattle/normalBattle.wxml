@@ -1,0 +1,63 @@
+<!--pages/index/normalBattle/normalBattle.wxml-->
+<view class='wrapper'>
+    <view class='battleBox'>
+         <template is="battle" wx:for="{{allBattle}}" data='{{item,index}}' wx:key='{{index}}'></template> 
+        <view class='loadTips' bindtap='loadMore'>{{allBattle.length==0?'目前暂无比赛':'点击加载更多'}}</view>
+    </view>
+    <view class="navigator">
+        <view class="currentPage select" bindtap='newBattleButton'>
+            <image class='selectIcon' src='/assets/icon/newBattle.png'></image>
+            <view class='selectText'>发布比赛</view>
+        </view>
+        <view class="managePage select" bindtap='battleManageButton'>
+            <image class='selectIcon' src='/assets/icon/battleManage.png'></image>
+            <view class='selectText'>约战管理</view>
+        </view>
+    </view> 
+    <view class='telInputBlock' hidden='{{!showTelBlock}}'>
+        <view class='telInputForm'>
+            <view class='telInputTitle'>填写信息</view>
+            <view class='nameInputBox'>
+                <input class='nameInput' value='{{name}}' bindinput='nameInput' placeholder='请输入您的真实姓名'></input>
+            </view>
+            <view class='telInputBox'>
+                <input class='telInput' value='{{tel}}' bindinput='telInput' placeholder='请输入您的手机号码'></input>
+            </view>
+            <view class='telInputTips'>手机号码与姓名只用于通知比赛相关信息，请放心。</view>   
+            <view class='button cancelButton' catchtap='hideTelBlock'>取消</view>         
+            <view class='button okButton' catchtap='submit'>提交</view>         
+        </view>
+    </view>
+</view>
+
+<template name="battle">
+    <view class="battle">
+        <view class='info'>
+            <view class='avatar'>
+                <!-- <image class='avatarImg' src='{{item.inviteWechatAvatar}}'></image> -->
+                <image class='avatarImg' src='{{item.inviteAvatar}}'></image>
+            </view>
+            <view class='infoText'>
+                <view class='wechatName'>{{item.inviteWechatName}}</view>
+                <view class='detail'>
+                    <view class='skill detailCell'>技术:{{item.userInfo.skill_points}}分</view>
+                    <view class='virtue detailCell'>球风:{{item.userInfo.virtue_points}}分</view>
+                    <view class='times detailCell'>比赛场次:{{item.userInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' bindtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button' bindtap='accept' data-ctrlno="{{item}}" data-ctrlIdx="{{index}}">确认应战</view>
+    </view>
+</template>

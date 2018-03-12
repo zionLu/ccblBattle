@@ -1,0 +1,40 @@
+/* pages/index/ccblBattle/ccblBattleManage/ccblRevoke/ccblRevoke.wxss */
+.wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.title{
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #282828;
+    margin-top: 51rpx;
+    margin-left: 51rpx;
+}
+.panel{
+    margin-top: 21rpx;
+    width: 650rpx;
+    height: 426rpx;
+    padding: 30rpx 50rpx 0 50rpx;
+    background: white;
+    border-radius: 10rpx;
+}
+.text{
+    width: 100%;
+    height: 100%;
+    font-size: 32rpx;
+    color: #909090;
+}
+.submitButton{
+    width: 660rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 34rpx;
+    color: white;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    background: #4556a0;
+    text-align: center;
+    border-radius: 10rpx;
+}

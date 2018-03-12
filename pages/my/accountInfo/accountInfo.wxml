@@ -1,0 +1,45 @@
+<!--accountInfo.wxml-->
+<view class="wrapper">
+    <view class="menu">
+        <view class="registInfo select" bindtap='changeRegistDetailShowStage'>
+            <view class='title'>注册信息</view>
+            <view class='tips' wx:if='{{!haveRegist}}'>未注册参赛</view>
+            <image class="arrow" src="../../../assets/icon/arrow.png"></image>
+        </view>
+        <view class='registInfoDetail' hidden='{{!showDetail}}'>
+            <!-- <view class='noRegistDetail' wx:if='{{!haveRegist}}'></view>
+            <view class='haveRegistDetail' wx:if='{{haveRegist}}'></view> -->
+            <block wx:if='{{!haveRegist}}'>
+                <view class='registTips'>请联系我们进行注册：</view>
+                <view class='ourWechatBox ourInfoBox'>
+                     <view class='ourWechatIconBox ourInfoIconBox'>
+                        <image class='telImg' src='/assets/icon/wechat.png'></image>
+                     </view> 
+                     <view class='ourWechat ourInfo'>：{{ourWechat}}</view>
+                     <view class='ourWechatButton ourInfoButton' bindtap='copyWechat'>复制</view>
+                </view>
+                <view class='ourTelBox ourInfoBox'>
+                    <view class='ourTelIconBox ourInfoIconBox'>
+                        <image class='wechatImg' src='/assets/icon/tel.png'></image>
+                    </view> 
+                    <view class='ourTel ourInfo'>：{{ourTel}}</view>
+                    <view class='ourTelButton ourInfoButton' bindtap='callTel'>拨打</view>
+                </view>
+            </block>
+            <block wx:if='{{haveRegist}}'>
+                <view class='registSchool registInfoItem'>学校：{{classInfo.school}}</view>
+                <view class='registGrade registInfoItem'>年级：{{classInfo.grade}}</view>
+                <view class='registClass registInfoItem'>班级：{{classInfo.class}}</view>
+                <view class='registScore registInfoItem'>积分：{{classInfo.points}}</view>
+            </block>
+        </view>
+        <view class="changePsw select" bindtap='changePassword'>
+            <view class='title'>修改密码</view>
+            <image class="arrow" src="../../../assets/icon/arrow.png"></image>                        
+        </view>
+        <view class="bindAgent select" bindtap='ccblBind'>
+            <view class='title'>CCBL绑定</view>
+            <image class="arrow" src="../../../assets/icon/arrow.png"></image>                        
+        </view>
+    </view>
+</view>

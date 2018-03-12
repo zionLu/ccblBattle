@@ -1,0 +1,39 @@
+<!--pages/index/ccblBattle/ccblBattleManage/ccblFinish/ccblFinish.wxml-->
+<view class='wrapper'>
+    <view class='header'>确认结束前请为对手打分并上传比分</view>
+    <view class='panel'>
+        <view class='enemy'>
+            <view class='avatar'>
+                <image class='avatarImg' src='{{enemyAvatar}}'></image>
+            </view>
+            <view class='info'>
+                <view class='school'>{{enemy.school}}</view>
+                <view class='class'>{{enemy.grade}}{{enemy.class}}</view>
+            </view>
+        </view>
+        <view class='detail'>
+            <view class='skill detailItem'>
+                <view class='skillTitle title'>技术:</view>
+                <image class='ball' wx:for='{{skill}}' data-ctrlno="{{index+1}}" wx:key='{{index+1}}' src='/assets/icon/score1.png' bindtap='setScore'></image>
+                <image class='ball' wx:for='{{5-skill}}' data-ctrlno="{{index+skill+1}}" wx:key='{{index+skill+1}}' src='/assets/icon/score0.png' bindtap='setScore'></image>
+                <view class='sum'>{{skill}}分</view>
+            </view>
+            <view class='virtue detailItem'>
+                <view class='virtueTitle title'>球风:</view>  
+                <image class='ball' wx:for='{{virtue}}' data-ctrlno="{{index+1}}" wx:key='{{index+1}}' src='/assets/icon/score1.png' bindtap='setVirtue'></image>
+                <image class='ball' wx:for='{{5-virtue}}' data-ctrlno="{{index+virtue+1}}" wx:key='{{index+virtue+1}}' src='/assets/icon/score0.png' bindtap='setVirtue'></image>
+                <view class='sum'>{{virtue}}分</view>              
+            </view>            
+        </view>
+        <view class='addPic'>
+            <view class='picBox'>
+                <image class='picture' src='{{picUrl}}' bindtap='addPic'></image>
+            </view>
+            <view class='tips'>
+                <view class='tipsTitle'>上传图片</view>
+                <view class='tipsText'>请上传比分以方便数据处理</view>
+            </view>
+        </view>
+    </view>
+    <view class='submitButton' bindtap='submit'>提交</view>
+</view>

@@ -1,0 +1,313 @@
+/* pages/index/ccblBattle/ccblBattleManage/ccblBattleManage.wxss */
+page{
+    overflow-y: scroll;
+}
+
+.wrapper{
+    width: 100%;
+    position: relative;
+    
+}
+.newBattleButton{
+    width: 50px;
+    height: 50px;
+    background: #cecece;
+    border-radius: 100%;
+    line-height: 50px;
+    position: fixed;
+    bottom: 130rpx;
+    right: 70rpx;
+}
+.newBattleButtonImg{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 100%;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+}
+.header::-webkit-scrollbar{
+    display: none;
+}
+ .filter{
+    /* width: 100%; */
+     width: 900rpx;
+    height: 80rpx;
+    padding-left: 11rpx;
+    padding-right: 41rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    overflow: scroll; 
+    
+} 
+.select{
+    margin-left: 30rpx;
+    width: 120rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 32rpx;
+    border-top: 4rpx solid white;
+    border-bottom: 4rpx solid white;
+    text-align: center;
+    color: #282828;
+}
+.currentSelect{
+    border-bottom:4rpx solid #4556a0;
+    color: #4556a0;
+}
+.battleBox{
+    width: 100%;
+    position: relative;
+    top: 79rpx;
+}
+/*模板 发布中类与一些共用样式（搬运自约战页面的模板样式）  */
+.announcingBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.avatar{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+    background: #afafaf;
+    position: absolute;
+    right: 30rpx;
+    top: 31rpx;
+
+}
+.avatarImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 35rpx;
+}
+.school{
+    font-size: 32rpx;
+    color: #4556a0;
+    height: 32rpx;
+    line-height: 32rpx;
+    padding-top: 31rpx;
+}
+.class{
+    font-size: 32rpx;
+    color: #4556a0;
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-top: 23rpx;
+}
+.detail{
+    margin-left: 28rpx;
+    margin-top: 24rpx;
+}
+.detailUp,.detailDown{
+    height: 26rpx;
+    line-height: 26rpx;
+}
+.detailDown{
+    margin-top: 17rpx;
+}
+.detailCell{
+    display: inline-block;
+    width: 200rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color:#909090;
+}
+.address{
+    margin-top: 31rpx;
+    display: flex;
+}
+.addressTitle{
+    display: inline-block;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 48rpx;
+    color: #4556a0;
+    vertical-align: top
+}
+.addressContent{
+    display: inline-block;
+    /* font-size: 32rpx; */
+    width: 470rpx;
+    vertical-align: top;
+}
+.addressText{
+    font-size: 32rpx;
+    color: #282828;
+    line-height: 32rpx;
+}
+.addressLocation{
+    line-height: 48rpx;
+}
+.addressDetail{
+    margin-top: 22rpx;
+}
+.time{
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-top: 23rpx;
+}
+.timeTitle{
+    display: inline-block;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #4556a0;
+}
+.timeText{
+    display: inline-block;
+    font-size: 32rpx;
+    color: #282828;
+    height: 32rpx;
+    line-height: 32rpx;
+}
+.time::after{
+    content: ' ';
+    display: block;
+    width: 650rpx;
+    height: 1rpx;
+    background: #cccccc;
+    margin-top: 20rpx;
+}
+.button{
+    margin-top: 41rpx;
+    display: inline-block;
+    font-size: 28rpx;
+    text-align: center;
+    width: 176rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    margin-bottom: 30rpx;
+}
+.mapButton{
+    color: #4556a0;
+    border: 2rpx solid #4556a0;
+    border-radius: 20rpx;
+}
+.submitButton{
+    color: white;
+    border:  2rpx solid #4556a0;
+    background: #4556a0;
+    border-radius: 20rpx;
+    float: right;
+}
+
+/*进行中类模板  */
+.processingBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.we,.enemy{
+    display: inline-block;
+    width:324rpx;
+    height: 130rpx;
+    padding-top: 31rpx;
+}
+.enemy{
+    float: right;
+    text-align: right
+}
+.we::after{
+    content: ' ';
+    display: inline-block;
+    width: 2rpx;
+    height: 130rpx;
+    background: #cccccc;
+    position: absolute;
+    top: 31rpx;
+    left: 355rpx;
+}
+.schoolSml{
+    padding-top: 0;
+    font-size: 28rpx;
+    height: 28rpx;
+    color: #4556a0;
+}
+.classSml{
+    margin-top: 23rpx;
+    font-size: 28rpx;
+    color: #4556a0;
+}
+
+/*审核中 模板  */
+.checkingBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.grayButton{
+    background: #b4b4b4;
+    border: 2rpx solid #b4b4b4;
+    
+}
+
+/*撤销中模板  */
+.revokingBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+
+/*已完成模板  */
+.finishedBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+
+/*已撤销模板  */
+.revokedBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+
+.noBattleImg{
+    display: block;
+    width: 254rpx;
+    height: 155rpx;
+    margin: 0 auto;
+    margin-top: 153rpx;
+}
+.noBattleTips{
+    text-align: center;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #909090;
+}

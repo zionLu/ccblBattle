@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/index/ccblBattle/ccblBattle",
+        "pages/index/ccblBattle/newCcblBattle/newCcblBattle",
+        "pages/index/ccblBattle/ccblBattleManage/ccblBattleManage",
+        "pages/index/ccblBattle/ccblBattleManage/ccblFinish/ccblFinish",
+        "pages/index/ccblBattle/ccblBattleManage/ccblRevoke/ccblRevoke",
+        "pages/index/normalBattle/normalBattle",
+        "pages/index/normalBattle/newNormalBattle/newNormalBattle",
+        "pages/index/normalBattle/normalBattleManage/normalBattleManage",
+        "pages/index/normalBattle/normalBattleManage/normalFinish/normalFinish",
+        "pages/index/normalBattle/normalBattleManage/normalChoose/normalChoose",
+        "pages/index/normalBattle/normalBattleManage/normalRevoke/normalRevoke",
+        "pages/my/my",
+        "pages/my/aboutCcbl/aboutCcbl",
+        "pages/my/businessCoo/businessCoo",
+        "pages/my/accountInfo/accountInfo",
+        "pages/my/accountInfo/changePassword/changePassword",
+        "pages/my/accountInfo/ccblBind/ccblBind"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#4556a0",
+        "navigationBarTitleText": "CCBL大学生班级篮球联赛",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#353535",
+        "selectedColor": "#4556a0",
+        "backgroundColor": "white",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "assets/icon/indexIcon.png",
+                "selectedIconPath": "assets/icon/indexCurrent.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "个人中心",
+                "iconPath": "assets/icon/myIcon.png",
+                "selectedIconPath": "assets/icon/myCurrent.png"
+            }
+        ]
+    }
+}

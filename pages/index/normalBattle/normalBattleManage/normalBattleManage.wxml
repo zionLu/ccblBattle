@@ -1,0 +1,201 @@
+<!--pages/index/normalBattle/normalBattleManage/normalBattleManage.wxml-->
+<view class='wrapper'>
+    
+    <view class='battleBox announcingBattleBox' hidden='{{!showBox.showAnnouncingBattleBox}}'>
+        <template is="announcingBattle" wx:for="{{announcingBattle}}" data='{{item,index}}' wx:key='{{index}}'></template>
+        <image src='/assets/icon/noBattle.png' class='noBattleImg' hidden='{{!announcingBattle.length==0}}'></image>
+        <view class='noBattleTips' hidden='{{!announcingBattle.length==0}}'>没有发布中的比赛</view>
+    </view>
+    <view class='battleBox processingBattleBox' hidden='{{!showBox.showProcessingBattleBox}}'>
+        <template is="processingBattle" wx:for="{{processingBattle}}" data='{{item,index}}' wx:key='{{index}}'></template>
+        <image src='/assets/icon/noBattle.png' class='noBattleImg' hidden='{{!processingBattle.length==0}}'></image>
+        <view class='noBattleTips' hidden='{{!processingBattle.length==0}}'>没有进行中的比赛</view>
+    </view>
+    <view class='battleBox finishedBattleBox' hidden='{{!showBox.showFinishedBattleBox}}'>
+        <template is="finishedBattle" wx:for="{{finishedBattle}}" data='{{item,index}}' wx:key='{{index}}'></template>
+        <image src='/assets/icon/noBattle.png' class='noBattleImg' hidden='{{!finishedBattle.length==0}}'></image>
+        <view class='noBattleTips' hidden='{{!finishedBattle.length==0}}'>没有已完成的比赛</view>
+    </view>
+    <view class='battleBox revokedBattleBox' hidden='{{!showBox.showRevokedBattleBox}}'>
+        <template is="revokedBattle" wx:for="{{revokedBattle}}" data='{{item,index}}' wx:key='{{index}}'></template>
+        <image src='/assets/icon/noBattle.png' class='noBattleImg' hidden='{{!revokedBattle.length==0}}'></image>
+        <view class='noBattleTips' hidden='{{!revokedBattle.length==0}}'>没有已撤销的比赛</view>
+    </view>
+
+    <view class='header'>
+    <view class='filter'>
+        <view class="select announcingSelect {{showBox.showAnnouncingBattleBox?'currentSelect':''}}" bindtap='showAnnouncingBattle'>发布中</view>
+        <view class="select {{showBox.showProcessingBattleBox?'currentSelect':''}}" bindtap='showProcessingBattle'>进行中</view>
+        <view class="select {{showBox.showFinishedBattleBox?'currentSelect':''}}" bindtap='showFinishedBattle'>已完成</view>
+        <view class="select {{showBox.showRevokedBattleBox?'currentSelect':''}}" bindtap='showRevokedBattle'>已撤销</view>
+    </view>
+    </view>
+    
+    <view class='newBattleButton' catchtap='newBattleButton' catchtouchmove="newBattleButtonMove" style="left:{{left}}px; top: {{top}}px;">
+        <image class='newBattleButtonImg' src='/assets/icon/newBattleButton.png'></image>
+    </view>
+</view>
+
+<!-- 模板发布中 -->
+<template name="announcingBattle">
+    <view class="announcingBattle" bindtap='choose' data-ctrlno="{{item}}">
+        <view class='enemyQuantity'>{{item.acceptCounts}}</view>
+        <view class='info'>
+            <view class='avatar'>
+                 <image class='avatarImg' src='{{item.inviteAvatar}}'></image> 
+            </view>
+            <view class='infoText'>
+                <view class='wechatName'>{{item.inviteWechatName}}</view>
+                <view class='detail'>
+                    <view class='skill detailCell'>技术:{{item.userInfo.skill_points}}分</view>
+                    <view class='virtue detailCell'>球风:{{item.userInfo.virtue_points}}分</view>
+                    <view class='times detailCell'>比赛场次:{{item.userInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' catchtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button' catchtap='revoke' data-ctrlno="{{item}}">撤销比赛</view>
+    </view>
+</template>
+
+<!-- 模板 进行中  -->
+<template name="processingBattle">
+    <view class="processingBattle">
+        <!-- <view class='avatar'></view> -->
+        <view class='we'>
+            <view class='avatar weAvatar'>
+                <image class='avatarImg' src='{{item.inviteWechatAvatar}}'></image>
+            </view>
+            <view class='weInfo'>
+                <view class='wechatNames'>{{item.inviteWechatName}}</view>
+                <view class='infoDetail'>
+                    <view class='skill detailCell inlineDetailCell'>技术:{{item.inviteUserInfo.skill_points}}分</view>
+                    <view class='virtue detailCell inlineDetailCell'>球风:{{item.inviteUserInfo.virtue_points}}分</view>
+                    <view class='times detailCell inlineDetailCell inlineTimes'>比赛场次:{{item.inviteUserInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+        <view class='enemy'>
+            <view class='enemyInfo'>
+                <view class='wechatNames'>{{item.invitedWechatName}}</view>
+                <view class='infoDetail'>
+                    <view class='skill detailCell inlineDetailCell'>技术:{{item.invitedUserInfo.skill_points}}分</view>
+                    <view class='virtue detailCell inlineDetailCell'>球风:{{item.invitedUserInfo.virtue_points}}分</view>
+                    <view class='times detailCell inlineDetailCell inlineTimes'>比赛场次:{{item.invitedUserInfo.match_times}}场</view>
+                </view>
+            </view>
+            <view class='avatar enemyAvatar'>
+                <image class='avatarImg' src='{{item.invitedWechatAvatar}}'></image>
+            </view>
+        </view>
+        
+        
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' bindtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button' bindtap='finish' data-ctrlno="{{item}}">确认结束</view>
+    </view>
+</template>
+
+
+
+<!-- 模板 已完成  -->
+ <template name="finishedBattle">
+    <view class="finishedBattle">
+        <!-- <view class='avatar'></view> -->
+        <view class='we'>
+            <view class='avatar weAvatar'>
+                <image class='avatarImg' src='{{item.inviteWechatAvatar}}'></image>
+            </view>
+            <view class='weInfo'>
+                <view class='wechatNames'>{{item.inviteWechatName}}</view>
+                <view class='infoDetail'>
+                    <view class='skill detailCell inlineDetailCell'>技术:{{item.inviteUserInfo.skill_points}}分</view>
+                    <view class='virtue detailCell inlineDetailCell'>球风:{{item.inviteUserInfo.virtue_points}}分</view>
+                    <view class='times detailCell inlineDetailCell inlineTimes'>比赛场次:{{item.inviteUserInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+        <view class='enemy'>
+            <view class='enemyInfo'>
+                <view class='wechatNames'>{{item.invitedWechatName}}</view>
+                <view class='infoDetail'>
+                    <view class='skill detailCell inlineDetailCell'>技术:{{item.invitedUserInfo.skill_points}}分</view>
+                    <view class='virtue detailCell inlineDetailCell'>球风:{{item.invitedUserInfo.virtue_points}}分</view>
+                    <view class='times detailCell inlineDetailCell inlineTimes'>比赛场次:{{item.invitedUserInfo.match_times}}场</view>
+                </view>
+            </view>
+            <view class='avatar enemyAvatar'>
+                <image class='avatarImg' src='{{item.invitedWechatAvatar}}'></image>
+            </view>
+        </view>
+        
+        
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' bindtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button grayButton' data-ctrlno="{{item}}">确认结束</view>
+    </view>
+</template>
+
+<!-- 模板 已撤销  -->
+<template name="revokedBattle">
+    <view class="revokedBattle">
+        <view class='info'>
+            <view class='avatar'>
+                 <image class='avatarImg' src='{{item.inviteWechatAvatar}}'></image> 
+            </view>
+            <view class='infoText'>
+                <view class='wechatName'>{{item.inviteWechatName}}</view>
+                <view class='detail'>
+                    <view class='skill detailCell'>技术:{{item.inviteUserInfo.skill_points}}分</view>
+                    <view class='virtue detailCell'>球风:{{item.inviteUserInfo.virtue_points}}分</view>
+                    <view class='times detailCell'>比赛场次:{{item.inviteUserInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' bindtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button grayButton' data-ctrlno="{{item}}">撤销比赛</view>
+    </view>
+</template>
+

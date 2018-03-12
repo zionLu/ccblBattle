@@ -1,0 +1,54 @@
+<!--pages/index/normalBattle/newNormalBattle/newNormalBattle.wxml-->
+<view class='wrapper'>
+    <image class="photo" src='/assets/icon/newNormalBackground.png'></image>
+    <view class='infoFrom'>
+        <view class='name formItem'>
+            <view class='nameTitle title'>姓名</view>
+            <view class='nameContant contant'>
+                <input class='nameInput input' value='{{name}}' placeholder='请输入您的姓名' bindinput='nameInput'/>
+            </view>
+        </view>
+        <view class='tel formItem'>
+            <view class='telTitle title'>手机号码</view>
+            <view class='telContant contant'>
+                <input class='telInput input' value='{{tel}}' placeholder='请输入您的手机号码' bindinput='telInput'/>
+            </view>
+        </view>
+    </view>
+    <view class="addressForm">
+        <view class='addressName formItem'>
+            <view class='addressNameTitle title'>地点名称</view>
+            <view class='addressNameContant contant' bindtap='map'>{{addressName}}</view>
+            <image class='addressNameIcon' src='/assets/icon/addressIcon.png'></image>
+        </view>
+        <view class='addressPosition formItem'>
+            <view class='addressPositionTitle title'>地点地址</view>
+            <view class='addressPositionContant contant'>{{addressPosition}}</view>
+        </view>
+        <view class='addressDescription formItem'>
+            <view class='addressDescriptionTitle title'>地址描述</view>
+            <view class='addressDescriptionContant contant'>
+                <input class='adressDescriptionInput input' value='{{addressDescription}}' placeholder='请输入详细地点，如C区2号球场' bindinput='addressDescriptionInput'/>
+            </view>
+        </view>
+    </view>
+    <view class="dateForm">
+        <view class='date formItem'>
+            <view class='dateTitle title'>日期选择</view>
+            <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+                <view class='dateContant contant'>{{date}}</view>
+            </picker>
+        </view>
+        <view class='time formItem'>
+            <view class='timeTitle title'>时间选择</view>
+            <picker mode="time" value="{{time}}" start="{{startTime}}" end="{{endTime}}" bindchange="bindTimeChange">
+                <view class='timeContant contant'>{{time}}</view>
+            </picker>
+        </view>
+    </view>
+    <view class='buttonBlock'>
+        <view class='cancel button' bindtap='reset'>重置</view>
+        <view class='submit button' bindtap='submit'>提交</view>        
+    </view>    
+</view>
+

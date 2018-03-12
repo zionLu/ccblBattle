@@ -1,0 +1,37 @@
+<!--my.wxml-->
+<view class="wrapper">
+    <view class='info'>
+        <view class='photoBox'>
+              <image class="userPhoto" src="{{userInfo.avatarUrl}}"></image>  
+        </view>
+        <view class='nickName'>{{userInfo.nickName}}</view>
+        <view class='wxLoginButton' bindtap='wxLogin' wx:if='{{!haveLogin}}'>微信登录</view> 
+    </view>
+    <view class='menu'>
+        <view class='selectBox accountInfo'>
+            <view class='selectButton' bindtap='accountInfoButton'>
+                <view class='selectIcon accountInfoIcon'>
+                    <image class='iconImg accountInfoIconImg' src='/assets/icon/accountInfo.png'></image>
+                </view>
+                <view class='selectText accountInfoText'>账号信息</view>
+            </view>
+        </view>
+        <view class='selectBox aboutCcbl'>
+            <view class='selectButton' bindtap='aboutCcblButton'>
+                <view class='selectIcon aboutCcblIcon'>
+                    <image class='iconImg aboutCcblIconImg' src='/assets/icon/aboutCcbl.png'></image>                    
+                </view>
+                <view class='selectText aboutCcblText'>关于CCBL</view>                                
+            </view>            
+        </view>
+        <view class='selectBox businessCoo'>
+            <view class='selectButton' bindtap='businessCooButton'>
+                <view class='selectIcon businessCooIcon'>
+                    <image class='iconImg businessCooIconImg' src='/assets/icon/businessCoo.png'></image>                    
+                </view>
+                <view class='selectText businessCooText'>商业合作</view>                                
+            </view>        
+        </view>
+    </view>
+    <view class='tips'>CCBL约战平台服务使用协议</view>
+</view>

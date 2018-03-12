@@ -1,0 +1,54 @@
+<!--pages/index/normalBattle/normalBattleManage/normalChoose/normalChoose.wxml-->
+<view class='wrapper'>
+    <view class="announcingBattle" bindtap='choose'>
+        <!-- <view class='enemyQuantity'>{{item.acceptCounts}}</view> -->
+        <view class='info'>
+            <view class='avatar'>
+                 <image class='avatarImg' src='{{battle.inviteAvatar}}'></image> 
+            </view>
+            <view class='infoText'>
+                <view class='wechatName'>{{battle.inviteWechatName}}</view>
+                <view class='detail'>
+                    <view class='skill detailCell'>技术:{{battle.userInfo.skill_points}}分</view>
+                    <view class='virtue detailCell'>球风:{{battle.userInfo.virtue_points}}分</view>
+                    <view class='times detailCell'>比赛场次:{{battle.userInfo.match_times}}场</view>
+                </view>
+            </view>
+        </view>
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{battle.name}}</view>
+                <view class='addressText addressDetail'>{{battle.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{battle.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' catchtap='checkInMap' data-ctrlno="{{battle}}">查看地图</view>
+        <view class='submitButton button' catchtap='revoke' data-ctrlno="{{battle}}">撤销比赛</view>
+    </view>
+
+    <view class='enemyBox'>
+        <view class='enemyBoxTitle'>应战列表</view>
+        <template is='enemy' wx:for="{{enemyList}}" data='{{item,index}}' wx:key='{{index}}'></template>
+    </view>
+</view>
+
+<template name="enemy">
+    <view class="enemy">
+        <view class='enemyAvatar'>
+            <image class='enemyAvatarImg' src='{{item.userAvatar}}'></image>
+        </view>
+        <view class='enemyInfo'>
+            <view class='enemyName'>{{item.userName}}</view>
+            <view class='enemyDetail'>
+                <view class='enemySkill enemyDetailCell'>技术:{{item.userInfo.skill_points}}分</view>
+                <view class='enemyVirtue enemyDetailCell'>球风:{{item.userInfo.virtue_points}}分</view>
+                <view class='enemyTimes enemyDetailCell'>比赛场次:{{item.userInfo.match_times}}场</view>
+            </view>
+        </view>
+        <view class='acceptButton' catchtap='choose' data-ctrlno='{{item}}'>应战</view>
+    </view>
+</template>

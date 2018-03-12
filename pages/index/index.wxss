@@ -1,0 +1,135 @@
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+.background{
+    display: block;
+    width: 750rpx;
+    height: 360rpx;
+}
+.menu{
+     width: 750rpx;
+     height: 610rpx;
+     border-top: 1rpx solid white;
+     background: white;
+     margin-top: 72rpx;
+     position: relative;
+}
+.title{
+    width: 222rpx;
+    height: 70rpx;
+    position: absolute;
+    top: -31rpx;
+    left: 264rpx;
+}
+ .title::after{
+    content: ' ';
+    width:600rpx;
+    height: 1px;
+    background: #cccccc;
+    position: absolute; 
+    left: -189rpx;
+    top: 351rpx;
+} 
+.titleBackground{
+    width: 222rpx;
+    height: 70rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.titleText{
+    position: absolute;
+    width: 222rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    color: white;
+    font-size: 32rpx;
+}
+.box{
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 146rpx;
+    position: relative;
+}
+.ccblBox{
+    margin-top: 136rpx;
+}
+/* .ccblBox::after{
+    content: ' ';
+    width:600rpx;
+    height: 1px;
+    background: #cccccc;
+    position: absolute; 
+    left: 25rpx;
+    top: 320rpx;
+} */
+.normalBox{
+    margin-top: 166rpx;
+}
+.logo{
+    /* display: block; */
+    width: 112rpx;
+    height: 80rpx;
+}
+.logo::before{
+    content: ' ';
+    display: block;
+    width: 18rpx;
+    height: 18rpx;
+    border: 8rpx solid #4556a0;
+    border-radius: 20rpx; 
+    position: absolute;
+    left: -71rpx;
+    top: -50rpx;
+}
+.logo::after{
+    content: ' ';
+    width:1rpx;
+    height: 100rpx;
+    background: #cccccc;
+    position: absolute; 
+    top: 0;
+    left: 153rpx;
+    
+}
+.describe{
+    height: 80rpx;
+    text-align: center;
+    margin-left: 73rpx;
+}
+.desTitle{
+    height: 32rpx;
+    line-height: 32rpx;
+    font-size: 34rpx;
+    color: #282828;
+}
+.desText{
+    margin-top: 23rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #909090;
+}
+.button{
+    margin-left: 51rpx;
+    width: 70rpx;
+    height: 70rpx;
+    background: #4556a0;
+}
+.buttonImg{
+    width: 100%;
+    height: 100%;
+}
+/* .select{
+    margin:0;
+    width: 337.5rpx;
+    height: 187.5rpx;
+    background: #cecece;
+}
+.normal{
+    margin-top: 243.75rpx;
+} */

@@ -1,0 +1,146 @@
+/* pages/index/normalBattle/normalBattleManage/normalFinish/normalFinish.wxss */
+.wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.header{
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    background: #ffeebb;
+    font-size: 26rpx;
+    color: #b4b4b4;
+}
+.panel{
+    width: 650rpx;
+    height: 390rpx;
+    margin-top: 30rpx;
+    padding: 30rpx 50rpx 0 50rpx;
+    border-radius: 10rpx;
+    background: white;
+    position: relative;
+}
+.enemy{
+    width: 100%;
+    /* height: 20rpx; */
+    display: flex;
+    align-items: center;
+}
+.enemy::after{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 50rpx;
+    top: 122rpx;
+    width: 650rpx;
+    height: 1rpx;
+    background: #cccccc;
+}
+.avatar{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+    background: #afafaf;
+}
+.avatarImg{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+}
+.info{
+    margin-left: 21rpx;
+}
+.school{
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #4556a0;
+}
+.class{
+    font-size: 28rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    color: #4556a0;
+    margin-top: 21rpx;
+}
+.detail{
+    margin: 0 auto;
+    margin-top: 82rpx;
+}
+.detailItem{
+    /* margin: 0; */
+    /* width: 520rpx; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.virtue{
+    margin-top: 44rpx;
+}
+
+.title{
+    width: 86rpx;
+    margin-left: 74rpx;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #282828;
+    overflow: hidden;
+}
+.ball{
+    margin-left: 24rpx;
+    width: 44rpx;
+    height: 44rpx;
+}
+.sum{
+    margin-left: 31rpx;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #282828;
+}
+.addPic{
+    display: flex;
+    align-items: center;
+    margin-top: 40rpx;
+}
+.picBox{
+    width: 116rpx;
+    height: 116rpx;
+    border: 2rpx solid #a7a7a7;
+    margin-left:100rpx; 
+}
+.picture{
+    width: 100%;
+    height: 100%;
+}
+.tips{
+    margin-left: 21rpx;
+}
+.tipsTitle{
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #282828;
+}
+.tipsText{
+    margin-top: 21rpx;
+    font-size: 26rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    color: #909090;
+}
+.submitButton{
+    width: 660rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 34rpx;
+    color: white;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    background: #4556a0;
+    text-align: center;
+    border-radius: 10rpx;
+}

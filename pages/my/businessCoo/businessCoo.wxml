@@ -1,0 +1,4 @@
+<!--pages/my/businessCoo/businessCoo.wxml-->
+<image class='background background1' src='/assets/icon/businessCoo1.png'></image>
+<image class='background' src='/assets/icon/businessCoo2.png'></image>
+<image class='background' src='/assets/icon/businessCoo3.png'></image>

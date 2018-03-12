@@ -1,0 +1,15 @@
+<!--pages/my/accountInfo/ccblBind/ccblBind.wxml-->
+<view class='wrapper'>
+    <view class='part'>
+        <view class='ccblIdCell cell'>
+            <view class='ccblIdTitle title'>CCBL账号</view>
+            <input class='ccblIdInput input' placeholder='请输入正确账号' value='{{id}}' bindinput='idInput'></input>
+            <!-- <image class='wrong' src='../../../../assets/icon/inputWrong.png' hidden='{{!warnShow}}'></image> -->
+        </view>
+        <view class='ccblPswCell cell'>
+            <view class='ccblPswTitle title'>密码</view>
+            <input class='ccblPswInput input' type='password' placeholder='请输入正确密码' value='{{password}}' bindinput='passwordInput'></input>
+        </view>
+    </view>
+    <view class='submit' bindtap='submit'>绑定</view>
+</view>

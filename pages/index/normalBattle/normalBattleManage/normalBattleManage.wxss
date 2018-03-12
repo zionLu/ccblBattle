@@ -1,0 +1,319 @@
+/* pages/index/normalBattle/normalBattleManage/normalBattleManage.wxss */
+page{
+    overflow-y: scroll;
+}
+
+.wrapper{
+    width: 100%;
+    position: relative;
+    
+}
+.newBattleButton{
+    width: 50px;
+    height: 50px;
+    background: #cecece;
+    border-radius: 100%;
+    line-height: 50px;
+    position: fixed;
+    bottom: 130rpx;
+    right: 70rpx;
+}
+.newBattleButtonImg{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 100%;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+}
+.header::-webkit-scrollbar{
+    display: none;
+}
+.filter{
+    /* width: 100%; */
+    width: 660rpx;
+    height: 80rpx;
+    padding-left: 45rpx;
+    padding-right: 45rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    
+}
+.select{
+    margin-left: 60rpx;
+    width: 120rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 32rpx;
+    border-top: 4rpx solid white;
+    border-bottom: 4rpx solid white;
+    text-align: center;
+    color: #282828;
+}
+.announcingSelect{
+    margin-left: 0
+}
+.currentSelect{
+    border-bottom:4rpx solid #4556a0;
+    color: #4556a0;
+}
+.battleBox{
+    width: 100%;
+    position: relative;
+    top: 79rpx;
+}
+/*模板 发布中类与一些共用样式（搬运自约战页面的模板样式）  */
+.announcingBattle{
+    /* width:710rpx; */
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.enemyQuantity{
+    width: 34rpx;
+    height: 34rpx;
+    border-radius: 17rpx;
+    line-height: 34rpx;
+    text-align: center;
+    font-size: 20rpx;
+    color: white;
+    background: #ef5555;
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+}
+.info{
+    padding-top: 30rpx;
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+    background: #afafaf;
+}
+.avatarImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 35rpx;
+}
+.infoText{
+    margin-left: 32rpx;
+}
+.wechatName{
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #4556a0;
+}
+.detail{
+    margin-top: 13rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+}
+.detailCell{
+    display: inline-block;
+    width: 160rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color:#909090;
+}
+.times{
+    width: 210rpx;
+}
+.address{
+    margin-top: 31rpx;
+    display: flex
+}
+.addressTitle{
+    display: inline-block;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 48rpx;
+    color: #4556a0;
+    vertical-align: top
+}
+.addressContent{
+    display: inline-block;
+    width: 470rpx;
+    /* font-size: 32rpx; */
+    
+    vertical-align: top;
+}
+.addressText{
+    font-size: 32rpx;
+    color: #282828;
+    line-height: 32rpx;
+}
+.addressLocation{
+    line-height: 48rpx;
+}
+.addressDetail{
+    margin-top: 22rpx;
+}
+.time{
+    height: 32rpx;
+    line-height: 32rpx;
+    margin-top: 23rpx;
+}
+.timeTitle{
+    display: inline-block;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #4556a0;
+}
+.timeText{
+    display: inline-block;
+    font-size: 32rpx;
+    color: #282828;
+    height: 32rpx;
+    line-height: 32rpx;
+}
+.time::after{
+    content: ' ';
+    display: block;
+    width: 650rpx;
+    height: 1rpx;
+    background: #cccccc;
+    margin-top: 20rpx;
+}
+.button{
+    margin-top: 41rpx;
+    display: inline-block;
+    font-size: 28rpx;
+    text-align: center;
+    width: 176rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    margin-bottom: 30rpx;
+}
+.mapButton{
+    color: #4556a0;
+    border: 2rpx solid #4556a0;
+    border-radius: 20rpx;
+}
+.submitButton{
+    color: white;
+    border:  2rpx solid #4556a0;
+    background: #4556a0;
+    border-radius: 20rpx;
+    float: right;
+}
+
+/*进行中类模板  */
+.processingBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.we,.enemy{
+    display: inline-flex;
+    width:324rpx;
+    height: 130rpx;
+    padding-top: 31rpx;
+    align-items: center;
+}
+.enemy{
+    float: right;
+    text-align: right
+}
+.weAvatar{
+    margin-right: 14rpx;
+}
+.enemyAvatar{
+    margin-left: 14rpx;
+}
+.weInfo,.enemyInfo{
+    width: 250rpx;
+}
+.we::after{
+    content: ' ';
+    display: inline-block;
+    width: 2rpx;
+    height: 130rpx;
+    background: #cccccc;
+    position: absolute;
+    top: 31rpx;
+    left: 355rpx;
+}
+.inlineDetailCell{
+    font-size: 22rpx;
+    height: 22rpx;
+    line-height: 22rpx;
+    width: 105rpx;
+}
+.inlineTimes{
+    width: 200rpx;
+}
+.wechatNames{
+    padding-top: 0;
+    font-size: 28rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    color: #4556a0;
+}
+.infoDetail{
+    margin-top: 15rpx;
+    font-size: 22rpx;
+    color: #4556a0;
+}
+
+
+/*已完成模板  */
+.finishedBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+.grayButton{
+    background: #b4b4b4;
+    border: 2rpx solid #b4b4b4;
+}
+/*已撤销模板  */
+.revokedBattle{
+    width: 650rpx;
+    background: white;
+    padding: 0 30rpx 0 30rpx;
+    margin: 0 auto;
+    margin-top: 31rpx;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 31rpx;
+}
+
+.noBattleImg{
+    display: block;
+    width: 254rpx;
+    height: 155rpx;
+    margin: 0 auto;
+    margin-top: 153rpx;
+}
+.noBattleTips{
+    text-align: center;
+    font-size: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #909090;
+}

@@ -1,0 +1,49 @@
+<view class='wrapper'>
+    <view class='battleBox'>
+        <template is="battle" wx:for="{{allBattle}}" data='{{item,index}}' wx:key='{{index}}'></template>
+        <view class='loadTips' bindtap='loadMore'>{{allBattle.length==0?'目前暂无比赛':'点击加载更多'}}</view>
+    </view>
+    <view class="navigator">
+        <view class="currentPage select" bindtap='newBattleButton'>
+            <image class='selectIcon' src='/assets/icon/newBattle.png'></image>
+            <view class='selectText'>发布比赛</view>
+        </view>
+        <view class="managePage select" bindtap='battleManageButton'>
+            <image class='selectIcon' src='/assets/icon/battleManage.png'></image>
+            <view class='selectText'>CCBL管理</view>
+        </view>
+    </view> 
+</view>
+
+<template name="battle">
+    <view class="battle">
+        <view class='avatar'>
+            <image class='avatarImg' src='{{item.inviteWechatAvatar}}'></image>
+        </view>
+        <view class='school'>{{item.inviteClassInfo.school}}</view>
+        <view class='class'>{{item.inviteClassInfo.grade}}{{item.inviteClassInfo.class}}</view>
+        <view class='detail'>
+            <view class='detailUp'>
+                <view class='skill detailCell'>技术:{{item.inviteClassSkillPoints}}分</view>
+                <view class='virtue detailCell'>球风:{{item.inviteClassVirtuePoints}}分</view>
+            </view>
+            <view class='detailDown'>
+                <view class='score detailCell'>积分:{{item.inviteClassInfo.points}}分</view>
+                <view class='times detailCell'>比赛场次:{{item.inviteMatchTimes}}场</view>                
+            </view>            
+        </view>
+         <view class='address'>
+            <view class='addressTitle'>比赛场地：</view>
+            <view class='addressContent'>
+                <view class='addressText addressLocation'>{{item.name}}</view>
+                <view class='addressText addressDetail'>{{item.address_des}}</view>                
+            </view>
+         </view>
+        <view class='time'>
+            <view class='timeTitle'>比赛时间：</view>
+            <view class='timeDate timeText'>{{item.matchTime}}</view>
+        </view> 
+        <view class='mapButton button' bindtap='checkInMap' data-ctrlno="{{item}}">查看地图</view>
+        <view class='submitButton button' bindtap='accept' data-ctrlno="{{index}}">确认应战</view>
+    </view>
+</template>

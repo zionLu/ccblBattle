@@ -1,0 +1,11 @@
+/* pages/my/businessCoo/businessCoo.wxss */
+.background{
+    display: block;
+    width: 700rpx;
+    height: 394rpx;
+    margin: 0 auto;
+    margin-top: 60rpx;
+}
+.background1{
+    margin-top: 30rpx;
+}

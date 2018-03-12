@@ -1,0 +1,5 @@
+/* pages/my/aboutCcbl/aboutCcbl.wxss */
+.background{
+    width: 100%;
+    height: 7562.5rpx;
+}

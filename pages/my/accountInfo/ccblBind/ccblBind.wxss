@@ -1,0 +1,60 @@
+/* pages/my/accountInfo/ccblBind/ccblBind.wxss */
+.wrapper{
+    width: 100%;
+    height: 100%; 
+}
+.part{
+    width: 100%;
+    height: 200rpx;
+    background: white;
+    margin-top: 30rpx;
+}
+.cell{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.title{
+    height: 100rpx;
+    width: 162rpx;
+    line-height: 100rpx;
+    margin-left: 32rpx;
+    font-size: 34rpx;
+    color: #282828
+}
+.input{
+    width: 300rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-left: 40rpx;
+    font-size: 34rpx;
+
+}
+.wrong{
+    width: 37rpx;
+    height: 37rpx;
+}
+.ccblPswTitle::before{
+    content: ' ';
+    background: #cccccc;
+    width: 650rpx;
+    height: 1rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.submit{
+    width: 660rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    background: #4556a0;
+    color: white;
+    font-size: 34rpx;
+    border-radius: 10rpx;
+    
+}

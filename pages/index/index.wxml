@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="wrapper">
+    <image class='background' src='/assets/icon/indexBackground.png'></image>
+    <view class='menu'>
+        <view class='title'>
+            <image class='titleBackground' src='/assets/icon/indexTitleBackground.png'></image>
+            <view class='titleText'>选择赛制</view>
+        </view>
+        <view class='ccblBox box'>
+            <image class='ccblLogo logo' src='/assets/icon/ccblLogo.png'></image>
+            <view class='describe'>
+                <view class='desTitle'>CCBL约战</view>
+                <view class='desText'>万元大奖，全班旅游</view>
+            </view> 
+            <view class='button' bindtap='ccblBattleButton'>
+                <image class='buttonImg' src='/assets/icon/indexButton.png'></image>
+            </view>
+        </view>
+        <view class='normalBox box'>
+            <image class='normalLogo logo' src='/assets/icon/normalLogo.png'></image>
+            <view class='describe'>
+                <view class='desTitle'>自由约战</view>
+                <view class='desText'>勇者出击，我为英雄</view>
+            </view> 
+            <view class='button' bindtap='normalBattleButton'>
+                <image class='buttonImg' src='/assets/icon/indexButton.png'></image>
+            </view>
+        </view>
+        <!-- <view class='ccbl select' bindtap='ccblBattleButton'></view>
+        <view class='normal select'></view> -->
+    </view>
+</view>

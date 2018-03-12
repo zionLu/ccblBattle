@@ -1,0 +1,8 @@
+<!--pages/index/ccblBattle/ccblBattleManage/ccblRevoke/ccblRevoke.wxml-->
+<view class='wrapper'>
+    <view class='title'>撤销理由：</view>
+    <view class='panel'>
+        <textarea class='text' placeholder='请填写您的撤销理由......' value='{{reason}}' bindinput='reasonInput'></textarea>
+    </view>
+    <view class='submitButton' bindtap='submit'>提交</view>
+</view>
